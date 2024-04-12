@@ -46,3 +46,5 @@ Sample `200` Response:
 ## 🔒 Environment Variables
 
 No environment variables required.
+
+1. vcf data {first_name, last_name, job_title, primary_phone, secondary_phone, email, web_url,}
