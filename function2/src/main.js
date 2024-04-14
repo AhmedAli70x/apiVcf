@@ -20,7 +20,9 @@ export default async ({ req, res, log, error }) => {
       '661970c40027f908ba28',
       'd5132d6d-34f9-4e19-a4bc-a318df3b8ff6',
   );
-    return vcf;
+  console.log(vcf)
+  return res.send(vcf);
+    
 
 
 
