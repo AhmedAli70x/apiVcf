@@ -1,26 +1,29 @@
-import { Client } from 'node-appwrite';
+import { Client , Storage } from 'node-appwrite';
+
+const client = new Client();
+const storage = new Storage(client);
+
+
+client
+    .setEndpoint('https://cms.itexpertnow.com/v1')
+    .setProject('66158c1e000f88577e01')
+
 
 // This is your Appwrite function
 // It's executed each time we get a request
 export default async ({ req, res, log, error }) => {
-  // Why not try the Appwrite SDK?
-  //
-  // const client = new Client()
-  //    .setEndpoint('https://cloud.appwrite.io/v1')
-  //    .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID)
-  //    .setKey(process.env.APPWRITE_API_KEY);
-
-  // You can log messages to the console
-  log('Hello, Logs!');
-
-  // If something goes wrong, log an error
-  error('Hello, Errors!');
+  
 
   // The `req` object contains the request data
   if (req.method === 'GET') {
-    // Send a response with the res object helpers
-    // `res.send()` dispatches a string back to the client
-    return res.send('Hello, World!');
+    const vcf = storage.getFileDownload(
+      '661970c40027f908ba28',
+      'd5132d6d-34f9-4e19-a4bc-a318df3b8ff6',
+  );
+    return vcf;
+
+
+
   }
 
   // `res.json()` is a handy helper for sending JSON
