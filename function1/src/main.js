@@ -43,6 +43,6 @@ export default async ({ req, res, log, error }) => {
       return res.send('VCard created successfully', response); // Success
     }, function (error) {
         console.log(error); // Failure
-    // });
+    });
   }
 };
