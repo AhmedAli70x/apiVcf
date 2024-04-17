@@ -4,7 +4,7 @@ var vCardsJS = require('vcards-js');
 
 const client = new Client();
 const databases = new Databases(client);
-const functions = new Storage(client);
+const storage = new Storage(client);
 var vCard = vCardsJS();
 
 client
@@ -47,7 +47,7 @@ export default async ({ req, res, log, error }) => {
 );
 
 promise.then(function (response) {
-    console.log(response); // Success
+  return res.send('VCard created successfully', response); // Success
 }, function (error) {
     console.log(error); // Failure
 });
