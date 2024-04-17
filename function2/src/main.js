@@ -1,5 +1,5 @@
-import { Client , Storage } from 'node-appwrite';
-var fs = require('fs');
+import { Client , Storage, fs } from 'node-appwrite';
+ 
 
 const client = new Client();
 const storage = new Storage(client);
