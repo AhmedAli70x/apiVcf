@@ -1,11 +1,11 @@
-import { Client , Databases, Storage, fs, vcards-js } from 'node-appwrite';
+import { Client , Databases, Storage, fs } from 'node-appwrite';
 
-
+var vCardsJS = require('vcards-js');
 
 const client = new Client();
 const databases = new Databases(client);
 const storage = new Storage(client);
-// var vCard = vCardsJS();
+var vCard = vCardsJS();
 
 client
     .setEndpoint('https://cms.itexpertnow.com/v1')
