@@ -1,4 +1,4 @@
-import { Client , Databases, Storage, fs } from 'node-appwrite';
+import { Client , Databases, Storage } from 'node-appwrite';
 
 var vCardsJS = require('vcards-js');
 
