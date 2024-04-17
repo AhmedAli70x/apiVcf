@@ -16,8 +16,12 @@ client
   ); // Your secret API key
 
 export default async ({ req, res, log, error }) => {
- 
-  if (req.method === "POST") {
+  if (req.method === "GET") {
+    return res.send("Hello, World!");
+  }
+
+  else if (req.method === "POST") {
+    return res.send("Hello, World! POST,", req.body);
 
       vCard.firstName = req.body.firstName;
       vCard.middleName = req.body.middleName;
@@ -39,6 +43,6 @@ export default async ({ req, res, log, error }) => {
       return res.send('VCard created successfully', response); // Success
     }, function (error) {
         console.log(error); // Failure
-    });
+    // });
   }
 };
