@@ -1,6 +1,6 @@
 import { Client , Databases, Storage} from 'node-appwrite';
 
-import fs from 'fs';
+// import fs from 'fs';
 import vCardsJS from 'vcards-js';
 
 
