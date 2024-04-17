@@ -1,4 +1,4 @@
-import { Client, Databases, Storage } from "node-appwrite";
+import { Client, Databases, Storage, ID } from "node-appwrite";
 
 import vCardsJS from "vcards-js";
 
