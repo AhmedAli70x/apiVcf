@@ -21,7 +21,6 @@ export default async ({ req, res, log, error }) => {
   }
 
   else if (req.method === "POST") {
-    return res.send("Hello, World! POST,", req.body);
 
       vCard.firstName = req.body.firstName;
       vCard.middleName = req.body.middleName;
@@ -36,7 +35,7 @@ export default async ({ req, res, log, error }) => {
       const promise = storage.createFile(
         '661970c40027f908ba28',
         ID.unique(),
-        sdk.InputFile.fromPath("./eric-nesser2.vcf", "eric-nesser2.vcf")
+        InputFile.fromPath("./eric-nesser2.vcf", "eric-nesser2.vcf")
     );
 
     promise.then(function (response) {
