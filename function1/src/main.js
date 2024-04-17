@@ -1,6 +1,9 @@
-import { Client , Databases, Storage, vcards-js } from 'node-appwrite';
+import { Client , Databases, Storage} from 'node-appwrite';
 
-var vCardsJS = new vcards-js();
+import fs from 'fs';
+import vCardsJS from 'vcards-js';
+
+
 
 const client = new Client();
 const databases = new Databases(client);
