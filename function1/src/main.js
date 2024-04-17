@@ -16,33 +16,29 @@ client
   ); // Your secret API key
 
 export default async ({ req, res, log, error }) => {
-  if (req.method === "GET") {
-    return res.send("Hello, World!");
-  }
-
+ 
   if (req.method === "POST") {
-    return res.send("Hello, World! POST,", req.body);
 
-    //   vCard.firstName = req.body.firstName;
-    //   vCard.middleName = req.body.middleName;
-    //   vCard.lastName = req.body.lastName;
-    //   vCard.organization = req.body.organization;
-    //   vCard.photo.attachFromUrl('https://1drv.ms/i/s!ArOcLYH4RemJo01S7Hv9NGxomCwC?e=Gg6ffb', 'JPEG');
-    //   vCard.workPhone = req.body.workPhone;
-    //   vCard.title = req.body.title;
-    //   vCard.url = req.body.url;
-    //   vCard.note = req.body.note;
+      vCard.firstName = req.body.firstName;
+      vCard.middleName = req.body.middleName;
+      vCard.lastName = req.body.lastName;
+      vCard.organization = req.body.organization;
+      vCard.photo.attachFromUrl('https://1drv.ms/i/s!ArOcLYH4RemJo01S7Hv9NGxomCwC?e=Gg6ffb', 'JPEG');
+      vCard.workPhone = req.body.workPhone;
+      vCard.title = req.body.title;
+      vCard.url = req.body.url;
+      vCard.note = req.body.note;
 
-    //   const promise = storage.createFile(
-    //     '661970c40027f908ba28',
-    //     ID.unique(),
-    //     sdk.InputFile.fromPath("./eric-nesser2.vcf", "eric-nesser2.vcf")
-    // );
+      const promise = storage.createFile(
+        '661970c40027f908ba28',
+        ID.unique(),
+        sdk.InputFile.fromPath("./eric-nesser2.vcf", "eric-nesser2.vcf")
+    );
 
-    // promise.then(function (response) {
-    //   return res.send('VCard created successfully', response); // Success
-    // }, function (error) {
-    //     console.log(error); // Failure
-    // });
+    promise.then(function (response) {
+      return res.send('VCard created successfully', response); // Success
+    }, function (error) {
+        console.log(error); // Failure
+    });
   }
 };
