@@ -1,6 +1,6 @@
 import { Client , Databases, Storage } from 'node-appwrite';
 
-// var vCardsJS = require('vcards-js');
+
 
 const client = new Client();
 const databases = new Databases(client);
