@@ -22,6 +22,8 @@ export default async ({ req, res, log, error }) => {
 
   if (req.method === 'POST') {
 
+    return res.send('Hello, World! POST,', req.body);
+
 //   vCard.firstName = req.body.firstName;
 //   vCard.middleName = req.body.middleName;
 //   vCard.lastName = req.body.lastName;
