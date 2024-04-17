@@ -3,6 +3,9 @@ import { Client , Databases, Storage} from 'node-appwrite';
 // import fs from 'fs';
 import vCardsJS from 'vcards-js';
 
+// Create a new vCard
+ 
+
 
 
 const client = new Client();
