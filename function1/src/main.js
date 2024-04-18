@@ -31,15 +31,16 @@ export default async ({ req, res, log, error }) => {
       vCard.title = req.body.title;
       vCard.url = req.body.url;
       vCard.note = req.body.note;
-
+      var card = vCard.getFormattedString()
+      var id = ID.unique()
       const promise = storage.createFile(
         '661970c40027f908ba28',
-        ID.unique(),
-        InputFile.fromPath("./eric-nesser2.vcf", "eric-nesser2.vcf")
+        id,
+        InputFile.fromPlainText(card, `${req.body.firstName}.vcf`)
     );
 
     promise.then(function (response) {
-      return res.send('VCard created successfully', response); // Success
+      return res.send('VCard created successfully', id); // Success
     }, function (error) {
         console.log(error); // Failure
     });
