@@ -36,7 +36,7 @@ export default async ({ req, res, log, error }) => {
       const promise = storage.createFile(
         '661970c40027f908ba28',
         id,
-        InputFile.fromPlainText(card, `${req.body.firstName}.vcf`)
+        card
     );
 
     promise.then(function (response) {
