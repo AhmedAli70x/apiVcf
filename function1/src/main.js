@@ -38,11 +38,12 @@ export default async ({ req, res, log, error }) => {
         id,
         card
     );
+    return res.send('VCard created successfully', id);
+    // promise.then(function (response) {
+    //   return res.send('VCard created successfully', id); // Success
+    // }, function (error) {
+    //     console.log(error); // Failure
+    // });
 
-    promise.then(function (response) {
-      return res.send('VCard created successfully', id); // Success
-    }, function (error) {
-        console.log(error); // Failure
-    });
   }
 };
